@@ -1,0 +1,26 @@
+<?php
+
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ApiController;
+use App\Http\Controllers\TokenController;
+
+/*
+|--------------------------------------------------------------------------
+| API Routes
+|--------------------------------------------------------------------------
+|
+| Here is where you can register API routes for your application. These
+| routes are loaded by the RouteServiceProvider within a group which
+| is assigned the "api" middleware group. Enjoy building your API!
+|
+*/
+
+Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
+    return $request->user();
+});
+Route::get('/data/fitur', [ApiController::class, 'fitur'])->middleware('auth:sanctum');
+Route::get('/data/fiturtable', [ApiController::class, 'fiturDatatable'])->middleware('auth:sanctum');
+Route::get('/check-token', [TokenController::class, 'checkToken']);
+Route::put('/data/fiture/naik', [App\Http\Controllers\FitureController::class, 'up'])->middleware('auth:sanctum');
+Route::put('/data/fiture/turun', [App\Http\Controllers\FitureController::class, 'down'])->middleware('auth:sanctum');
