@@ -1,6 +1,6 @@
 <h1>Landing Pages Web</h1>
 
-<h2>Petunjuk Instalasi</p>
+<h2>Petunjuk Instalasi</h2>
 <ul>
     <li>Silahkan download projek yang ada di dalam repository</li>
     <li>Instal dependensi laravel melalui composer dengan : <code>composer install</code></li>
